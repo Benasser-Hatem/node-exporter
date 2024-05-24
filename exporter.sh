@@ -2,7 +2,7 @@
 if command -v docker &>/dev/null; then
     echo "Docker is installed. Running docker-compose.exporters.yml..."
     # Assuming you have docker-compose installed as well
-    docker-compose -f docker-compose.exporters.yml up -d
+    docker-compose up -d
 else
     echo "Docker is not installed. Installing Node Exporter..."
     # Install Node Exporter using systemd
