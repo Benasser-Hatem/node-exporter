@@ -1,10 +1,4 @@
-# Check if Docker is installed
-if command -v docker &>/dev/null; then
-    echo "Docker is installed. Running docker-compose.exporters.yml..."
-    # Assuming you have docker-compose installed as well
-    docker-compose up -d
-else
-    echo "Docker is not installed. Installing Node Exporter..."
+
     # Install Node Exporter using systemd
     sudo useradd --no-create-home --shell /bin/false node_exporter
     sudo mkdir -p /var/lib/node_exporter/textfile_collector
@@ -32,4 +26,4 @@ EOF
     sudo systemctl start node_exporter
     sudo systemctl enable node_exporter
     echo "Node Exporter installed and started successfully."
-fi
+
